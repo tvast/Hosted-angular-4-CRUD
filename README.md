@@ -1,6 +1,11 @@
-# PROJECTNAME
-
+# Hosted-angular-4-singlepage-template
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.1.
+and hiosted on heroku 
+
+Launch service with node server.js
+Launch dashboard with ng serve
+
+#OTHER
 
 ## Development server
 
