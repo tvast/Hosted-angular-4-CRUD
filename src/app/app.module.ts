@@ -12,6 +12,7 @@ import { WolfsoundService } from './wolfsound.service';
 import { WolfsoundListComponent } from './wolfsound-list/wolfsound-list.component';
 import { RouterModule }   from '@angular/router';
 import { WolfsoundHomeComponent } from './wolfsound-home/wolfsound-home.component';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
 
@@ -33,6 +34,10 @@ import { WolfsoundHomeComponent } from './wolfsound-home/wolfsound-home.componen
       {
         path: 'home',
         component:  WolfsoundHomeComponent
+      },
+      {
+        path: 'add',
+        component:  FormComponent
       }
     ])
   ],
@@ -40,6 +45,7 @@ import { WolfsoundHomeComponent } from './wolfsound-home/wolfsound-home.componen
     AppComponent,
     WolfsoundListComponent,
     WolfsoundHomeComponent,
+    FormComponent,
   ],
   providers: [WolfsoundService],
   bootstrap: [AppComponent],
