@@ -19,7 +19,7 @@ export class WolfsoundListComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
-		// this.wolfService.getAllBears().subscribe(bears => this.wolf = wolf);
+		this.wolfService.getAllBears().subscribe(wolf => this.wolf = wolf);
 	}
 
 	gotoDetail(wolf: Wolf): void {

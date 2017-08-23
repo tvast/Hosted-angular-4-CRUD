@@ -1,22 +1,26 @@
-<p>
-  wolfsound-list works!
-</p>
+<div class="container">
+  <h3>Wolfs</h3>
 
-  <div class="card">
+   <div class="brick" *ngFor="let wolf of wolf">
+
+   <div class="card">
     <div class="card-image waves-effect waves-block waves-light">
       <img class="activator" src="{{bear.cover}}">
     </div>
     <div class="card-content">
-      <span [routerLink]="['/bear', bear._id]" class="card-title activator grey-text text-darken-4">{{bear.name}}<i class="material-icons right">more_vert</i></span>
+      <span [routerLink]="['/wolf', wolf._id]" class="card-title activator grey-text text-darken-4">{{wolf.name}}<i class="material-icons right">more_vert</i></span>
       <p><a href="#">This is a link</a></p>
     </div>
     <div class="card-reveal">
       <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
       <ul>
-       <li><a >{{bear.name}}</a></li>
+       <!-- <li><a >{{bear.name}}</a></li>
        <li>{{bear.age}}</li>
-       <li>{{bear.description}}</li>
+       <li>{{bear.description}}</li> -->
        <img class="image materialboxed" width="10%" src="{{bear.photo}}"/>
      </ul>
    </div>
  </div>
+ </div>
+
+</div>
