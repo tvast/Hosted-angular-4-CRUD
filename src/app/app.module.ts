@@ -8,6 +8,11 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {CdkTableModule} from '@angular/cdk';
 
+import { WolfsoundService } from './wolfsound.service';
+import { WolfsoundListComponent } from './wolfsound-list/wolfsound-list.component';
+import { RouterModule }   from '@angular/router';
+import { WolfsoundHomeComponent } from './wolfsound-home/wolfsound-home.component';
+
 @NgModule({
 
     imports: [
@@ -16,13 +21,30 @@ import {CdkTableModule} from '@angular/cdk';
     FormsModule,
     HttpModule,
     ReactiveFormsModule,
+ RouterModule.forRoot([
+      {
+        path: '',
+        component: WolfsoundListComponent
+      },
+      {
+        path: 'list',
+        component: WolfsoundListComponent
+      },
+      {
+        path: 'home',
+        component:  WolfsoundHomeComponent
+      }
+    ])
   ],
   declarations: [
-    AppComponent
+    AppComponent,
+    WolfsoundListComponent,
+    WolfsoundHomeComponent,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [WolfsoundService],
+  bootstrap: [AppComponent],
 })
+
 export class AppModule { 
 
 }

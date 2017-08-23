@@ -1,111 +1,85 @@
-<div class="glitch-wrapper">
-  <div data-text="Gloubouloux" class="glitch">Gloubouloux<sup>(beta)</sup></div>
-</div>
-<div id="index-banner" class="parallax-container">
-  <div class="section no-pad-bot">
-    <div class="container">
-      <br><br>
-      <!-- <h1 data-step="3" 
-      data-intro="Bienvenue sur Wolfsound !" 
+<nav class="white #212121 grey darken-4" role="navigation">
+  <div class="nav-wrapper  container">
+    <div>
+      <a style="color :white;" data-text="TROCART" id="logo-container" href="#" class="brand-logo">
+        <!-- TROCART<sup>(beta)</sup> -->
+        Gloubouloux<sup>(beta)</sup>
+      </a>
+    </div>
+
+    <ul class="right hide-on-med-and-down">
+      <li><a 
+        data-step="1" 
+        data-intro="Ajouter vos informations ici" 
+        data-position='right' alt="Add a song" style="color :white;" 
+        routerLink="/inscription" 
+        routerLinkActive="active" >
+        <i class="large material-icons">present_to_all</i>
+        <span class="sr-only">(current)</span>
+      </a>
+    </li>
+    <li>
+      <a 
+      data-step="2" 
+      data-intro="Connectez vous ici" 
       data-position='right' 
       alt="Login" 
       style="color :white;" 
       routerLink="/login" 
-      routerLinkActive="active"class="header">Discover more throught yourself</h1> -->
-      <div class="row center">
-        <h5 class="header col s12 light">A modern and cool tool for musicians</h5>
-      </div>
-      <br><br>
+      routerLinkActive="active" >
+      <i class="large material-icons">perm_identity</i>
+      <span class="sr-only">(current)</span>
+    </a>
+  </li>
+  
+  <!-- <li><a style="color :white;" routerLink="/home">home</a></li> -->
+  <li><a onclick="javascript:introJs().setOption('showProgress', true).start();"style="color :white;"><i class="large material-icons">settings_input_antenna</i></a></li> 
+  <li><a style="color :white;" routerLink="/wolf">Gloubs</a></li> 
+  <!-- <li><a style="color :white;" routerLink="/beardetail">detail</a></li> -->
+  <!-- <li><a style="color :white;" routerLink="/admin">admin</a></li> -->
+</ul>
 
-    </div>
-  </div>
-  <div class="parallax head"><img src="app/img/background1.jpg" alt="Unsplashed background img 1"></div>
+<ul  style="color :white;" id="nav-mobile" class="side-nav">
+
+</ul>
+<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
 </div>
-
-
+</nav>
+<router-outlet></router-outlet>
+<br>
 <div class="container">
-  <div class="section">
-
-    <!--   Icon Section   -->
-    <div class="row">
-      <div class="col s12 m4">
-        <div class="icon-block">
-          <h2 class="center lime-text"><i class="material-icons">polymer</i></h2>
-          <h5 class="center">Customize your sound wave with ease</h5>
-
-          <p class="light">Musique et image sont intimement liéés(Histoire de la musique et de l'image à développer).</p>
-        </div>
-      </div>
-
-      <div class="col s12 m4">
-        <div class="icon-block">
-          <h2 class="center lime-text"><i class="material-icons">vpn_key</i></h2>
-          <h5 class="center">Protect your work</h5>
-
-          <p class="light">Pour protéger le travail des artistes nous proposons à chaque fois des snippets de morceau afin de vous laisser le découvrir. Nous avons tout mis en place pour que vous puissiez acquerir le morceau après son écoute pour soutenir l'artiste que vous aimez.</p>
-        </div>
-      </div>
-
-      <div class="col s12 m4">
-        <div class="icon-block">
-          <h2 class="center lime-text"><i class="material-icons">volume_up</i></h2>
-          <h5 class="center">Un nouveau service pour le streaming de musique !</h5>
-
-          <p class="light">Artistes, passionné de musique, découvrez les dernières nouveautés en exclusivité sur notre plateforme !</p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-
-<div class="parallax-container valign-wrapper">
-  <div class="section no-pad-bot">
-    <div class="container">
-      <div class="row center">
-       <p class="light" data-text="
-       Découvrez une nouvelle expérience musicale et digital. Uploader vos morceau sur notre cloud et laissez notre technologie générer un visuel pour vos morceau. Il s'adapte au rythme et au style musical que vous avez renseigné.
-       " class="glitch2">Découvrez une nouvelle expérience musicale et digital. Uploader vos morceau sur notre cloud et laissez notre technologie générer un visuel pour vos morceau. Il s'adapte au rythme et au style musical que vous avez renseigné. </p>
-
-       <p class="light" data-text="
-       Nous laissons la possibilité de ne mette en ligne qu'un snippets de votre production afin de protéger celle-ci contre les téléchargements illégaux - Vous pouvez aussi proposer des morceaux exclusifs ou entier durant une durée determine à nos abonnés hack the sound. Cela permet de teaser votre communauté sur les nouveautés à venir - Vous pouvez renseigner toute les informations concernant les plateformes d'achat que vous utilisez (amazon, itune, deezer, spotify)
-       " class="glitch2">Nous laissons la possibilité de ne mette en ligne qu'un snippets de votre production afin de protéger celle-ci contre les téléchargements illégaux - Vous pouvez aussi proposer des morceaux exclusifs ou entier durant une durée determine à nos abonnés hack the sound. Cela permet de teaser votre communauté sur les nouveautés à venir - Vous pouvez renseigner toute les informations concernant les plateformes d'achat que vous utilisez (amazon, itune, deezer, spotify)</p>
-     </div>
+  <div class="pull-right">
+    <p><em><small><a href="#" target="_wiki" title="Wiki..."><strong>Gloubouloux<sup>BÊTA</sup></strong></a>
+     <a href="#" target="_MANIFEST" title="Voir détails...">Bêta 1.X</a>
+     par <a href="#" target="#" title="author">Théophile Vast</a>
+     @ VAST 2016/2017</small></em></p>
    </div>
  </div>
- <div class="parallax middle"><img src="app/img/background2.jpg" alt="Unsplashed background img 2"></div>
-</div>
 
-<div class="container">
-  <div class="section">
-
+ <footer class="#000000 black page-footer teal">
+  <div class="container">
     <div class="row">
-      <div class="col s12 center">
-        <h3><i class="mdi-content-send brown-text"></i></h3>
-        <h4>Vous êtes artiste ?</h4>
-        <p class="left-align light">
-          Découvrez une nouvelle expérience musicale et digital. Uploader vos morceau sur notre cloud et laissez notre technologie générer un visuel pour vos morceau. Il s'adapte au rythme et au style musical que vous avez renseigné. - Nous laissons la possibilité de ne mette en ligne qu'un snippets de votre production afin de protéger celle-ci contre les téléchargements illégaux </p>
+      <div class="col l6 s12">
+        <h5 class="white-text">What's Gloubouloux ?</h5>
+        <p class="grey-text text-lighten-4">
+         Visualise your sound with web gl
+       </p>
 
-          <p class="left-align light">Vous pouvez aussi proposer des morceaux exclusifs ou entier durant une durée determine à nos abonnés hack the sound. Cela permet de teaser votre communauté sur les nouveautés à venir - Vous pouvez renseigner toute les informations concernant les plateformes d'achat que vous utilisez (amazon, itune, deezer, spotify)</p>
-        </div>
-      </div>
 
+     </div>
+     <div class="col l3 s12">
+      <h5 class="white-text">Menu</h5>
+      <ul>
+        <li><a class="white-text" routerLink="/home">Home</a></li>
+        <li><a class="white-text" routerLink="/login">Login</a></li>
+
+      </ul>
     </div>
   </div>
-
-
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 light"
-          data-text="
-          Wolfsound, streaming gratuit pour tout vos titres préférés. Visualisation audio live avec WebGl." class="glitch2"
-          >Wolfsound, streaming gratuit pour tout vos titres préférés. Visualisation audio live avec WebGl.</h5>
-        </div>
-      </div>
-    </div>
-    <div class="parallax end"><img src="app/img/background3.jpg" alt="Unsplashed background img 3"></div>
+</div>
+<div class="footer-copyright">
+  <div class="container">
+    Made with  <i class="material-icons">loyalty</i> by <a class="brown-text text-lighten-3" href="mailto:(theophile.vast@gmail.com">Théophile Vast</a>
   </div>
-
+</div>
+</footer>
