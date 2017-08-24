@@ -9,6 +9,7 @@ import {HttpModule} from '@angular/http';
 import {CdkTableModule} from '@angular/cdk';
 
 import { WolfsoundService } from './wolfsound.service';
+import { ImageService } from './image.service';
 import { WolfsoundListComponent } from './wolfsound-list/wolfsound-list.component';
 import { RouterModule }   from '@angular/router';
 import { WolfsoundHomeComponent } from './wolfsound-home/wolfsound-home.component';
@@ -51,7 +52,7 @@ import { FileSelectDirective, FileDropDirective } from 'ng2-file-upload';
     FileSelectDirective, 
     FileDropDirective,
   ],
-  providers: [WolfsoundService],
+  providers: [WolfsoundService, ImageService],
   bootstrap: [AppComponent],
 })
 
