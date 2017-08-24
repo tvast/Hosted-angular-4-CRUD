@@ -2,12 +2,13 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.1.
 and hiosted on heroku 
 
-Launch service with node server.js
-Launch dashboard with ng serve
+Launch serviceWolf with node server.js in /serviceWOlf
+Launch imageAPI with npm start file upload express
+Launch dashboard with ng serve @root
 
-go to https://dry-fortress-19473.herokuapp.com/add for add a wolf
-go to https://dry-fortress-19473.herokuapp.com/
-go to https://dry-fortress-19473.herokuapp.com/home to see landing page
+go to https://dry-fortress-19473.herokuapp.com/add > for add a wolf and add a sound too
+go to https://dry-fortress-19473.herokuapp.com/ > see the wolf
+go to https://dry-fortress-19473.herokuapp.com/home > to see landing page
 
 # OTHER
 
