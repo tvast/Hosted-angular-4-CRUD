@@ -4,6 +4,8 @@ const app = express();
 // Run the app by serving the static files
 // in the dist directory
 app.use(express.static(__dirname + '/dist'));
+
+const path = require('path');
 // If an incoming request uses
 // a protocol other than HTTPS,
 // redirect that request to the
@@ -24,4 +26,9 @@ app.use(express.static(__dirname + '/dist'));
 // app.use(forceSSL());
 // Start the app by listening on the default
 // Heroku port
+
+app.get('/*', function(req, res) {
+  res.sendFile(path.join(__dirname + '/dist/index.html'));
+});
+
 app.listen(process.env.PORT || 8080);

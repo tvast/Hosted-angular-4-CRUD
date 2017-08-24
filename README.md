@@ -5,7 +5,11 @@ and hiosted on heroku
 Launch service with node server.js
 Launch dashboard with ng serve
 
-#OTHER
+go to https://dry-fortress-19473.herokuapp.com/add for add a wolf
+go to https://dry-fortress-19473.herokuapp.com/
+go to https://dry-fortress-19473.herokuapp.com/home to see landing page
+
+# OTHER
 
 ## Development server
 
