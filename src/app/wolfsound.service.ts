@@ -12,7 +12,7 @@ import { Wolf} from './wolf';
 export class WolfsoundService {
 
 	private headers = new Headers({'Content-Type': 'application/json'});
-	private wolfUrl = 'https://secret-sea-39644.herokuapp.com/api/bears';  // URL to web api
+	private wolfUrl = 'https://secret-sea-39644.herokuapp.com/api/bears';  // URL to web api https://secret-sea-39644.herokuapp.com/api/bears
 
 	constructor(
 		private http: Http

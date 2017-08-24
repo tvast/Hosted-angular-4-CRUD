@@ -14,7 +14,7 @@ import { RouterModule }   from '@angular/router';
 import { WolfsoundHomeComponent } from './wolfsound-home/wolfsound-home.component';
 import { FormComponent } from './form/form.component';
 
-import { FileSelectDirective, FileDropDirective } from 'ng2-file-upload/ng2-file-upload';
+import { FileSelectDirective, FileDropDirective } from 'ng2-file-upload';
 
 @NgModule({
 
@@ -49,7 +49,7 @@ import { FileSelectDirective, FileDropDirective } from 'ng2-file-upload/ng2-file
     WolfsoundHomeComponent,
     FormComponent,
     FileSelectDirective, 
-    FileDropDirective
+    FileDropDirective,
   ],
   providers: [WolfsoundService],
   bootstrap: [AppComponent],

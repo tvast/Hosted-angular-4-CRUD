@@ -2,19 +2,51 @@
   form works!
 </p>
 
-<style>
-    .my-drop-zone { border: dotted 3px lightgray; }
-    .nv-file-over { border: dotted 3px red; } /* Default class applied to drop zones on over */
-    .another-file-over-class { border: dotted 3px green; }
+<h1>
+<!-- here we echo the title from the component -->
+  {{title}}
+</h1>
+
+<!-- File input for the file-upload plugin, with special ng2-file-upload directive called ng2FileSelect -->
+<input type="file" name="photo" ng2FileSelect [uploader]="uploader" />
+<!-- button to trigger the file upload when submitted -->
+<button type="button" class="btn btn-success btn-s" (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
+      Upload with ng-2 file uploader
+</button>
  
-    html, body { height: 100%; }
-</style>
- 
+
+
 <div class="container">
+<h1>Become a wolf</h1>
+
+<form *ngIf="active"
+      (ngSubmit)="onSubmit()"
+       class="form-horizontal ">
+  <fieldset>
+    
+
+
+  <legend>Inscription Wolfsound</legend>
+      <div class="row">
+       
+    <div class="form-group col s6">
+      <label for="inputEmail" class="col-lg-2 control-label">Nom</label>
+      <div class="col-lg-10">
+        <input  name="name" [(ngModel)]="wolf.name"
+        type="text" class="form-control" id="nom" placeholder="Nom"/>
+      </div>
+    </div>
+    <div class="form-group col s6">
+      <label for="inputEmail" class="col-lg-2 control-label">Password</label>
+      <div class="col-lg-10">
+        <input  name="password" [(ngModel)]="wolf.password"
+        type="text" class="form-control" id="password" placeholder="password"/>
+      </div>
+    </div>
+    </div>
  
     <div class="navbar navbar-default">
         <div class="navbar-header">
-            <a class="navbar-brand" href>Angular2 File Upload</a>
         </div>
     </div>
  
@@ -119,36 +151,7 @@
  
     </div>
  
-</div>
 
-<div class="container">
-<h1>Become a wolf</h1>
-
-<form *ngIf="active"
-      (ngSubmit)="onSubmit()"
-       class="form-horizontal ">
-  <fieldset>
-    
-
-
-  <legend>Inscription Wolfsound</legend>
-      <div class="row">
-       
-    <div class="form-group col s6">
-      <label for="inputEmail" class="col-lg-2 control-label">Nom</label>
-      <div class="col-lg-10">
-        <input  name="name" [(ngModel)]="wolf.name"
-        type="text" class="form-control" id="nom" placeholder="Nom"/>
-      </div>
-    </div>
-    <div class="form-group col s6">
-      <label for="inputEmail" class="col-lg-2 control-label">Password</label>
-      <div class="col-lg-10">
-        <input  name="password" [(ngModel)]="wolf.password"
-        type="text" class="form-control" id="password" placeholder="password"/>
-      </div>
-    </div>
-    </div>
       
  <!--     <div class="form-group col s12">
       <label for="inputEmail" class="col-lg-2 control-label">Infos</label>
