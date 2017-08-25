@@ -16,6 +16,21 @@ import { WolfsoundHomeComponent } from './wolfsound-home/wolfsound-home.componen
 import { FormComponent } from './form/form.component';
 
 import { FileSelectDirective, FileDropDirective } from 'ng2-file-upload';
+import { DirectivesComponent } from './-directives/-directives.component';
+import { GuardsComponent } from './-guards/-guards.component';
+import { HelpersComponent } from './-helpers/-helpers.component';
+import { ModelsComponent } from './-models/-models.component';
+import { ServicesComponent } from './-services/-services.component';
+import { HomeComponent } from './-home/-home.component';
+import { LoginComponent } from './-login/-login.component';
+import { RegisterComponent } from './-register/-register.component';
+
+import { AlertComponent } from './_directives/index';
+import { AuthGuard } from './_guards/index';
+import { AlertService, AuthenticationService, UserService } from './_services/index';
+import { HomeComponent } from './home/index';
+import { LoginComponent } from './login/index';
+import { RegisterComponent } from './register/index';
 
 @NgModule({
 
@@ -42,6 +57,19 @@ import { FileSelectDirective, FileDropDirective } from 'ng2-file-upload';
         path: 'add',
         component:  FormComponent
       }
+      { 
+        path: '', component: HomeComponent, canActivate: [AuthGuard] 
+      },
+      { 
+        path: 'login', component: LoginComponent 
+      },
+      { 
+        path: 'register', component: RegisterComponent 
+      },
+      // otherwise redirect to home
+      { 
+        path: '**', redirectTo: '' 
+      }
     ])
   ],
   declarations: [
@@ -49,10 +77,24 @@ import { FileSelectDirective, FileDropDirective } from 'ng2-file-upload';
     WolfsoundListComponent,
     WolfsoundHomeComponent,
     FormComponent,
+     AlertComponent,
+        HomeComponent,
+        LoginComponent,
+        RegisterComponent,
     FileSelectDirective, 
-    FileDropDirective,
+    FileDropDirective, DirectivesComponent, GuardsComponent, HelpersComponent, ModelsComponent, ServicesComponent, HomeComponent, LoginComponent, RegisterComponent,
   ],
-  providers: [WolfsoundService, ImageService],
+  providers: [
+  WolfsoundService, 
+  ImageService,
+  AuthGuard,
+  AlertService,
+  AuthenticationService,
+  UserService,
+  // providers used to create fake backend
+  fakeBackendProvider,
+  MockBackend,
+  BaseRequestOptions],
   bootstrap: [AppComponent],
 })
 

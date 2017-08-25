@@ -12,7 +12,7 @@
         data-step="1" 
         data-intro="Ajouter vos informations ici" 
         data-position='right' alt="Add a song" style="color :white;" 
-        routerLink="/inscription" 
+        routerLink="/add" 
         routerLinkActive="active" >
         <i class="large material-icons">present_to_all</i>
         <span class="sr-only">(current)</span>
@@ -25,7 +25,7 @@
       data-position='right' 
       alt="Login" 
       style="color :white;" 
-      routerLink="/login" 
+      routerLink="/list" 
       routerLinkActive="active" >
       <i class="large material-icons">perm_identity</i>
       <span class="sr-only">(current)</span>
@@ -33,8 +33,8 @@
   </li>
   
   <!-- <li><a style="color :white;" routerLink="/home">home</a></li> -->
-  <li><a onclick="javascript:introJs().setOption('showProgress', true).start();"style="color :white;"><i class="large material-icons">settings_input_antenna</i></a></li> 
-  <li><a style="color :white;" routerLink="/wolf">Gloubs</a></li> 
+  <!-- <li><a onclick="javascript:introJs().setOption('showProgress', true).start();"style="color :white;"><i class="large material-icons">settings_input_antenna</i></a></li> --> 
+  <li><a style="color :white;" routerLink="/home">HOME</a></li> 
   <!-- <li><a style="color :white;" routerLink="/beardetail">detail</a></li> -->
   <!-- <li><a style="color :white;" routerLink="/admin">admin</a></li> -->
 </ul>
@@ -46,6 +46,7 @@
 </div>
 </nav>
 <router-outlet></router-outlet>
+<alert></alert>
  <footer class="#000000 black page-footer teal">
   <div class="container">
     <div class="row">
