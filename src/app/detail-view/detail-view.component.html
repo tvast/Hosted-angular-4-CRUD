@@ -1,3 +1,4 @@
+<div class="container">
 <div class="row" *ngIf="wolf">
     <div class="col s12 m6">
       <div class="card">
@@ -12,7 +13,9 @@
         <label>Description: </label>{{wolf.description}}<br>
         <label>Description: </label>{{wolf.infos}}<br>
         <label>password </label>{{wolf.password}}<br></p>
+        <a (click)="destroy()" class="waves-effect waves-light btn">destroy</a>
         </div>
       </div>
     </div>
   </div>
+</div>
