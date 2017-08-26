@@ -20,6 +20,17 @@ import { FileSelectDirective, FileDropDirective } from 'ng2-file-upload';
 import { DetailViewComponent } from './detail-view/detail-view.component';
 import { LoginComponent } from './login/login.component';
 import { CallbackComponent } from './callback/callback.component';
+import { ProfileComponent } from './profile/profile.component';
+
+import { Http, RequestOptions } from '@angular/http';
+import { AuthHttp, AuthConfig } from 'angular2-jwt';
+import { PingComponent } from './ping/ping.component';
+
+export function authHttpServiceFactory(http: Http, options: RequestOptions) {
+  return new AuthHttp(new AuthConfig({
+    tokenGetter: (() => localStorage.getItem('access_token'))
+  }), http, options);
+}
 
 @NgModule({
 
@@ -54,6 +65,9 @@ import { CallbackComponent } from './callback/callback.component';
       },
       { 
         path: 'login', component: LoginComponent
+      },
+      { 
+        path: 'profil', component: ProfileComponent
       }
     ])
   ],
@@ -63,9 +77,18 @@ import { CallbackComponent } from './callback/callback.component';
     WolfsoundHomeComponent,
     FormComponent,
     FileSelectDirective, 
-    FileDropDirective, DetailViewComponent, LoginComponent, CallbackComponent,
+    FileDropDirective, DetailViewComponent, LoginComponent, CallbackComponent, ProfileComponent, PingComponent,
   ],
-  providers: [WolfsoundService, ImageService, AuthService],
+  providers: [
+  WolfsoundService, 
+  ImageService, 
+  AuthService,
+    {
+      provide: AuthHttp,
+      useFactory: authHttpServiceFactory,
+      deps: [Http, RequestOptions]
+    }
+  ],
   bootstrap: [AppComponent],
 })
 
