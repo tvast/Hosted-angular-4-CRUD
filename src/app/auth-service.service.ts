@@ -7,6 +7,7 @@ import * as auth0 from 'auth0-js';
 export class AuthService {
 
 	userProfile: any;
+	requestedScopes: string = 'openid profile read:messages write:messages';
 
   auth0 = new auth0.WebAuth({
     clientID: 'gA2J2W7vxG5KjCXj795EeJ4g7FJvnXKs',
@@ -16,7 +17,8 @@ export class AuthService {
     redirectUri: 'http://localhost:4200/callback',      
     // scope: 'openid',
     audience: '{https://bbwvm.eu.auth0.com/api/v2/}',
-  	scope: 'openid profile read:messages'
+  	// scope: 'openid profile read:messages',
+  	scope: this.requestedScopes
   });
 
 
@@ -40,12 +42,19 @@ export class AuthService {
     });
   }
 
+  public userHasScopes(scopes: Array<string>): boolean {
+  const grantedScopes = JSON.parse(localStorage.getItem('scopes')).split(' ');
+  return scopes.every(scope => grantedScopes.includes(scope));
+}
+
   private setSession(authResult): void {
+  	const scopes = authResult.scope || this.requestedScopes || '';
     // Set the time that the access token will expire at
     const expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
     localStorage.setItem('access_token', authResult.accessToken);
     localStorage.setItem('id_token', authResult.idToken);
     localStorage.setItem('expires_at', expiresAt);
+      localStorage.setItem('scopes', JSON.stringify(scopes));
   }
 
   public logout(): void {

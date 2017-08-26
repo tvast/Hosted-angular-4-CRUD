@@ -1,48 +1,23 @@
+         <div class="fixed-action-btn horizontal click-to-toggle spin-close">
+    <a class="btn-floating btn-large grey">
+      <i class="material-icons">edit</i>
+    </a>
+    <ul>
+      <li><a routerLink="/add" class="btn-floating  teal darken-4"><i class="large material-icons">present_to_all</i></a></li>
+      <li><a routerLink="/login" class="btn-floating cyan darken-4"><i class="large material-icons">perm_identity</i></a></li>
+      <li><a routerLink="/list" class="btn-floating #01579b light-blue darken-4"><i class="material-icons">library_music</i></a></li>
+      <li><a routerLink="/home" class="btn-floating purple darken-4"><i class="material-icons">home</i></a></li>
+    </ul>
+  </div>
+
 <nav class="white #212121 grey darken-4" role="navigation">
   <div class="nav-wrapper  container">
     <div>
-      <a style="color :white;" data-text="wolfsound" id="logo-container" href="#" class="brand-logo">
+      <a style="color :white;" data-text="wolfsound" id="logo-container" href="#" class="brand-logo center">
         <!-- TROCART<sup>(beta)</sup> -->
         Wolfsound<sup>(beta)</sup>
       </a>
     </div>
-
-    <ul class="right hide-on-med-and-down">
-      <li><a 
-        data-step="1" 
-        data-intro="Ajouter vos informations ici" 
-        data-position='right' alt="Add a song" style="color :white;" 
-        routerLink="/add" 
-        routerLinkActive="active" >
-        <i class="large material-icons">present_to_all</i>
-        <span class="sr-only">(current)</span>
-      </a>
-    </li>
-    <li>
-      <a 
-      data-step="2" 
-      data-intro="Connectez vous ici" 
-      data-position='right' 
-      alt="add" 
-      style="color :white;" 
-      routerLink="/login" 
-      routerLinkActive="active" >
-      <i class="large material-icons">perm_identity</i>
-      <span class="sr-only">(current)</span>
-    </a>
-  </li>
-  
-  <!-- <li><a style="color :white;" routerLink="/home">home</a></li> -->
-  <li><a routerLink="/list" onclick="javascript:introJs().setOption('showProgress', true).start();"style="color :white;"><i class="large material-icons">settings_input_antenna</i></a></li> 
-  <li><a style="color :white;" routerLink="/home">HOME</a></li> 
-  <!-- <li><a style="color :white;" routerLink="/beardetail">detail</a></li> -->
-  <!-- <li><a style="color :white;" routerLink="/admin">admin</a></li> -->
-</ul>
-
-<ul  style="color :white;" id="nav-mobile" class="side-nav">
-
-</ul>
-<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
 </div>
 </nav>
 <router-outlet></router-outlet>

@@ -26,6 +26,8 @@ import { Http, RequestOptions } from '@angular/http';
 import { AuthHttp, AuthConfig } from 'angular2-jwt';
 import { PingComponent } from './ping/ping.component';
 
+import { AuthGuardService as AuthGuard } from './auth-guard.service';
+
 export function authHttpServiceFactory(http: Http, options: RequestOptions) {
   return new AuthHttp(new AuthConfig({
     tokenGetter: (() => localStorage.getItem('access_token'))
@@ -67,7 +69,10 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
         path: 'login', component: LoginComponent
       },
       { 
-        path: 'profil', component: ProfileComponent
+        path: 'profil', component: ProfileComponent, canActivate: [AuthGuard]
+      },
+       { 
+        path: 'ping', component: PingComponent, canActivate: [AuthGuard]
       }
     ])
   ],
