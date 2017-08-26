@@ -10,6 +10,7 @@ import {CdkTableModule} from '@angular/cdk';
 
 import { WolfsoundService } from './wolfsound.service';
 import { ImageService } from './image.service';
+import { AuthService } from './auth-service.service';
 import { WolfsoundListComponent } from './wolfsound-list/wolfsound-list.component';
 import { RouterModule }   from '@angular/router';
 import { WolfsoundHomeComponent } from './wolfsound-home/wolfsound-home.component';
@@ -17,6 +18,8 @@ import { FormComponent } from './form/form.component';
 
 import { FileSelectDirective, FileDropDirective } from 'ng2-file-upload';
 import { DetailViewComponent } from './detail-view/detail-view.component';
+import { LoginComponent } from './login/login.component';
+import { CallbackComponent } from './callback/callback.component';
 
 @NgModule({
 
@@ -43,7 +46,15 @@ import { DetailViewComponent } from './detail-view/detail-view.component';
         path: 'add',
         component:  FormComponent
       },
-      { path: 'wolf/:id', component: DetailViewComponent }
+      { 
+        path: 'wolf/:id', component: DetailViewComponent 
+      },
+       { 
+        path: 'callback', component: CallbackComponent 
+      },
+      { 
+        path: 'login', component: LoginComponent
+      }
     ])
   ],
   declarations: [
@@ -52,9 +63,9 @@ import { DetailViewComponent } from './detail-view/detail-view.component';
     WolfsoundHomeComponent,
     FormComponent,
     FileSelectDirective, 
-    FileDropDirective, DetailViewComponent,
+    FileDropDirective, DetailViewComponent, LoginComponent, CallbackComponent,
   ],
-  providers: [WolfsoundService, ImageService],
+  providers: [WolfsoundService, ImageService, AuthService],
   bootstrap: [AppComponent],
 })
 
